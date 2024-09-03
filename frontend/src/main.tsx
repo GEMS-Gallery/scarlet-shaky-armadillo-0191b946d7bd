@@ -8,14 +8,22 @@ import CssBaseline from '@mui/material/CssBaseline';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3498db',
+      main: '#000000',
     },
     secondary: {
-      main: '#2ecc71',
+      main: '#ffffff',
     },
-    error: {
-      main: '#e74c3c',
+    background: {
+      default: '#ffffff',
+      paper: '#f5f5f5',
     },
+    text: {
+      primary: '#000000',
+      secondary: '#666666',
+    },
+  },
+  typography: {
+    fontFamily: 'Arial, sans-serif',
   },
 });
 

@@ -35,6 +35,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ categories, onAddTask }) => {
                 {...field}
                 labelId="category-label"
                 label="Category"
+                sx={{ bgcolor: 'background.paper', color: 'text.primary' }}
               >
                 {categories.map((category) => (
                   <MenuItem key={category} value={category}>
@@ -56,10 +57,11 @@ const TaskForm: React.FC<TaskFormProps> = ({ categories, onAddTask }) => {
               label="Task Description"
               variant="outlined"
               fullWidth
+              sx={{ bgcolor: 'background.paper', color: 'text.primary' }}
             />
           )}
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="primary" sx={{ color: 'secondary.main' }}>
           Add Task
         </Button>
       </Box>

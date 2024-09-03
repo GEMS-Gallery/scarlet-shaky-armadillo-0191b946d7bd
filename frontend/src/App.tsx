@@ -72,29 +72,27 @@ function App() {
   };
 
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Task Manager
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
-            <CategoryList categories={categories} />
-            <TaskForm categories={categories} onAddTask={addTask} />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            {loading ? (
-              <CircularProgress />
-            ) : (
-              <TaskList
-                tasks={tasks}
-                onCompleteTask={completeTask}
-                onDeleteTask={deleteTask}
-              />
-            )}
-          </Grid>
+    <Container maxWidth="lg" sx={{ bgcolor: 'background.default', minHeight: '100vh', py: 4 }}>
+      <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'text.primary' }}>
+        Task Manager
+      </Typography>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={4}>
+          <CategoryList categories={categories} />
+          <TaskForm categories={categories} onAddTask={addTask} />
         </Grid>
-      </Box>
+        <Grid item xs={12} md={8}>
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <TaskList
+              tasks={tasks}
+              onCompleteTask={completeTask}
+              onDeleteTask={deleteTask}
+            />
+          )}
+        </Grid>
+      </Grid>
     </Container>
   );
 }

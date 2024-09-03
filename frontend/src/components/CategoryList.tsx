@@ -7,14 +7,14 @@ interface CategoryListProps {
 
 const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
   return (
-    <Paper elevation={3} sx={{ mb: 3, p: 2 }}>
-      <Typography variant="h6" gutterBottom>
+    <Paper elevation={0} sx={{ mb: 3, p: 2, bgcolor: 'background.paper' }}>
+      <Typography variant="h6" gutterBottom sx={{ color: 'text.primary' }}>
         Categories
       </Typography>
       <List>
         {categories.map((category) => (
           <ListItem key={category}>
-            <ListItemText primary={category} />
+            <ListItemText primary={category} sx={{ color: 'text.secondary' }} />
           </ListItem>
         ))}
       </List>
