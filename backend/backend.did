@@ -1,0 +1,26 @@
+type Task = 
+ record {
+   category: text;
+   completed: bool;
+   completedAt: opt int;
+   createdAt: int;
+   description: text;
+   id: nat;
+ };
+type Result_1 = 
+ variant {
+   err: text;
+   ok: nat;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok;
+ };
+service : {
+  addTask: (text, text) -> (Result_1);
+  completeTask: (nat) -> (Result);
+  deleteTask: (nat) -> (Result);
+  getCategories: () -> (vec text) query;
+  getTasks: () -> (vec Task) query;
+}
